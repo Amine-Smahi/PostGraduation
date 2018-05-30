@@ -1,30 +1,31 @@
-from django.db import models
-from django.template.defaultfilters import slugify
-from datetime import datetime
+from rest_framework import viewsets
 
-# Create your views here.
-class Doctorant(models.Model):
-    doctorant_id = models.AutoField(primary_key=True)
-    nationaliter = models.CharField(max_length=50, ${blank=True, null=True})
-    nom = models.CharField(max_length=50, ${blank=True, null=True})
-    prenom = models.CharField(max_length=50, ${blank=True, null=True})
-    sexe = models.CharField(max_length=10, ${blank=True, null=True})
-    date_naissance = models.DateTimeField()
-    lieu_naissance = models.CharField(max_length=l00, ${blank=True, null=True})
-    addresse = models.CharField(max_length=100, ${blank=True, null=True})
-    email = models.CharField(max_length=50, ${blank=True, null=True})
-    telephone = models.CharField(max_length=15, ${blank=True, null=True})
-    nom_prenom_mere = models.CharField(max_length=50, ${blank=True, null=True})
-    nom_pere = models.CharField(max_length=50, ${blank=True, null=True})
+from . import models
+from . import serializers
 
-    def __str__(self):
-        return self.nom_pere
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.name)
+class DoctorantViewSet(viewsets.ModelViewSet):
+    """
+    This endpoint provides access to recipes
 
-        super(Doctorant, self).save(*args, **kwargs)
+    list:
+    Retrieves a list of recipes stored in the database
 
-    class Meta:
-        ordering = ['name']
+    retrieve:
+    Retrieves a single recipe
+
+    create:
+    Stores a new recipe
+
+    destroy:
+    Removes an existing recipe
+
+    update:
+    Updates an existing recipe
+
+    partial_update:
+    Updates specific fields on an existing recipe
+    """
+    queryset = models.Doctorant.objects.all()
+    serializer_class = serializers.DoctorantSerializer
+    lookup_field = 'slug'
