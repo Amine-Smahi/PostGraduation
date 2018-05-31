@@ -28,4 +28,4 @@ class DoctorantViewSet(viewsets.ModelViewSet):
     """
     queryset = models.Doctorant.objects.all()
     serializer_class = serializers.DoctorantSerializer
-    lookup_field = 'slug'
+    lookup_field = 'id'

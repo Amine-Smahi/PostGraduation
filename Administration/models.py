@@ -4,27 +4,28 @@ from datetime import datetime
 
 # Create your views here.
 class Doctorant(models.Model):
-    doctorant_id = models.AutoField(primary_key=True)
-    nationaliter = models.CharField(max_length=50, ${blank=True, null=True})
-    nom = models.CharField(max_length=50, ${blank=True, null=True})
-    prenom = models.CharField(max_length=50, ${blank=True, null=True})
-    sexe = models.CharField(max_length=10, ${blank=True, null=True})
-    date_naissance = models.DateTimeField()
-    lieu_naissance = models.CharField(max_length=l00, ${blank=True, null=True})
-    addresse = models.CharField(max_length=100, ${blank=True, null=True})
-    email = models.CharField(max_length=50, ${blank=True, null=True})
-    telephone = models.CharField(max_length=15, ${blank=True, null=True})
-    nom_prenom_mere = models.CharField(max_length=50, ${blank=True, null=True})
-    nom_pere = models.CharField(max_length=50, ${blank=True, null=True})
+    nationaliter = models.CharField(max_length=50,null=False)
+    nom = models.CharField(max_length=50,null=False)
+    prenom = models.CharField(max_length=50,null=False)
+    sexe = models.CharField(max_length=10,null=False)
+    date_naissance = models.DateField()
+    lieu_naissance = models.CharField(max_length=100,null=False)
+    addresse = models.CharField(max_length=100,null=False)
+    email = models.CharField(max_length=50,null=False)
+    telephone = models.CharField(max_length=15,null=False)
+    nom_prenom_mere = models.CharField(max_length=50,null=False)
+    nom_pere = models.CharField(max_length=50,null=False)
+    accepted = models.BooleanField(default=False)
+    slug = models.SlugField()
 
     def __str__(self):
-        return self.nom_pere
+        return self.nom
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.nom)
 
         super(Doctorant, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ['name']
+        ordering = ['nom']
