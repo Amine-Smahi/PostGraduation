@@ -13,3 +13,13 @@ class ModuleAdmin(admin.ModelAdmin):
    pass 
 
 admin.site.register(models.Module, ModuleAdmin)
+
+class RecourtAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.Recourt, ModuleAdmin)
+
+class SujetAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.Sujet, ModuleAdmin)

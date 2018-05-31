@@ -13,3 +13,12 @@ class ModuleViewSet(viewsets.ModelViewSet):
     queryset = models.Module.objects.all()
     serializer_class = serializers.ModuleSerializer
     lookup_field = 'niveau'
+
+class RecourtViewSet(viewsets.ModelViewSet):
+    queryset = models.Recourt.objects.all()
+    serializer_class = serializers.RecourtSerializer
+    
+class SujetViewSet(viewsets.ModelViewSet):
+    queryset = models.Sujet.objects.all()
+    serializer_class = serializers.SujetSerializer
+    lookup_field = 'id'
