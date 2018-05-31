@@ -29,3 +29,21 @@ class Doctorant(models.Model):
 
     class Meta:
         ordering = ['nom']
+
+
+class Module(models.Model):
+    nom = models.CharField(max_length=50)
+    niveau = models.CharField(max_length=10)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.nom
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.nom)
+
+        super(Module, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['nom']
