@@ -22,3 +22,7 @@ class SujetViewSet(viewsets.ModelViewSet):
     queryset = models.Sujet.objects.all()
     serializer_class = serializers.SujetSerializer
     lookup_field = 'id'
+
+class ReinscriptionViewSet(viewsets.ModelViewSet):
+    queryset = models.Reinscription.objects.all()
+    serializer_class = serializers.ReinscriptionSerializer

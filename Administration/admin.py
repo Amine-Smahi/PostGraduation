@@ -23,3 +23,8 @@ class SujetAdmin(admin.ModelAdmin):
    pass 
 
 admin.site.register(models.Sujet, ModuleAdmin)
+
+class ReinscriptionAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.Reinscription, ModuleAdmin)

@@ -9,6 +9,7 @@ router.register(r'doctorant', views.DoctorantViewSet)
 router.register(r'module', views.ModuleViewSet)
 router.register(r'recourt', views.RecourtViewSet)
 router.register(r'sujet', views.SujetViewSet)
+router.register(r'reinscription', views.ReinscriptionViewSet)
 """
 router.register(r'inscription', views.RecipeViewSet)
 router.register(r'reinscription', views.CourseViewSet)
