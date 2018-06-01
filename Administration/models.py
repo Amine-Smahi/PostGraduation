@@ -15,6 +15,7 @@ class Doctorant(models.Model):
     telephone = models.CharField(max_length=15,null=False)
     nom_prenom_mere = models.CharField(max_length=50,null=False)
     nom_pere = models.CharField(max_length=50,null=False)
+    password = models.CharField(max_length=50,null=False)
     accepted = models.BooleanField(default=False)
     slug = models.SlugField()
 

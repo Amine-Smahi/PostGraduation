@@ -36,12 +36,12 @@ class DoctorantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Doctorant
-        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','accepted','inscriptions','reinscriptions','recours')
+        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','accepted','password','inscriptions','reinscriptions','recours')
 
 class ModuleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Module
-        fields = ('nom','niveau')
+        fields = ('id','nom','niveau')
 
 class SujetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
