@@ -90,7 +90,7 @@ class Reinscription(models.Model):
     gradeEncadreur = models.CharField(max_length=100)
     nomCoEncadreur = models.CharField(max_length=100)
     gradeCoEncadreur = models.CharField(max_length=100)
-    dateRinscription = models.DateField(auto_now_add=True)
+    dateReinscription = models.DateField(auto_now_add=True)
     slug = models.SlugField()
 
     def __str__(self):
@@ -101,6 +101,30 @@ class Reinscription(models.Model):
             self.slug = slugify(self.id)
 
         super(Reinscription, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['intitulerPostGrade']
+
+class Inscription(models.Model):
+    doctorant = models.ForeignKey(Doctorant, related_name='inscriptions', on_delete=models.CASCADE)
+    intitulerPostGrade = models.CharField(max_length=100)
+    intitulerSujet = models.CharField(max_length=100)
+    diplomeGraduation = models.CharField(max_length=250)
+    nomEncadreur = models.CharField(max_length=100)
+    gradeEncadreur = models.CharField(max_length=100)
+    nomCoEncadreur = models.CharField(max_length=100)
+    gradeCoEncadreur = models.CharField(max_length=100)
+    dateInscription = models.DateField(auto_now_add=True)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.intitulerSujet
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.id)
+
+        super(Inscription, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['intitulerPostGrade']

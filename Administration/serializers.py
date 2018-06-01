@@ -10,7 +10,12 @@ class RecourtSerializer(serializers.ModelSerializer):
 class ReinscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Reinscription
-        fields = ('doctorant','intitulerPostGrade','intitulerSujet','diplomeGraduation','nomEncadreur','nomCoEncadreur','dateRinscription')
+        fields = ('doctorant','intitulerPostGrade','intitulerSujet','diplomeGraduation','nomEncadreur','nomCoEncadreur','dateReinscription')
+
+class InscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Inscription
+        fields = ('doctorant','intitulerPostGrade','intitulerSujet','diplomeGraduation','nomEncadreur','nomCoEncadreur','dateInscription')
 
 class DoctorantSerializer(serializers.ModelSerializer):
     recours = serializers.HyperlinkedRelatedField(
@@ -23,10 +28,15 @@ class DoctorantSerializer(serializers.ModelSerializer):
         read_only=True,
         view_name='reinscription-detail'
     )
+    inscriptions = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='inscription-detail'
+    )
 
     class Meta:
         model = models.Doctorant
-        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','accepted','reinscriptions','recours')
+        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','accepted','inscriptions','reinscriptions','recours')
 
 class ModuleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

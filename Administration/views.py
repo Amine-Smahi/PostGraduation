@@ -26,3 +26,7 @@ class SujetViewSet(viewsets.ModelViewSet):
 class ReinscriptionViewSet(viewsets.ModelViewSet):
     queryset = models.Reinscription.objects.all()
     serializer_class = serializers.ReinscriptionSerializer
+
+class InscriptionViewSet(viewsets.ModelViewSet):
+    queryset = models.Inscription.objects.all()
+    serializer_class = serializers.InscriptionSerializer

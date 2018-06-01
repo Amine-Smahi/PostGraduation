@@ -28,3 +28,8 @@ class ReinscriptionAdmin(admin.ModelAdmin):
    pass 
 
 admin.site.register(models.Reinscription, ModuleAdmin)
+
+class InscriptionAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.Inscription, ModuleAdmin)
