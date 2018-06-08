@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paneaux d'administration</title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/font/material-design-icons/Material-Design-Icons.woff'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="listSujet(false)">
+  <ul id="slide-out" class="side-nav fixed z-depth-2">
+    <li class="center no-padding">
+      <div class="indigo darken-2 white-text" style="height: 180px;">
+        <div class="row">
+          <img style="margin-top: 8%;" width="220" src="../images/logo.png" class="responsive-img" />
+        </div>
+      </div>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="dashboard.html">
+        <b>Dashboard</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="inscriptions.html">
+        <b>Inscriptions</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="reinscription.html">
+        <b>Reinscriptions</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="listeetudiant.html">
+        <b>Liste Doctorant</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="recours.html">
+        <b>Recours</b>
+      </a>
+    </li>
+
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="emploit.html">
+        <b>Emploit du temp</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="editionpv.html">
+        <b>Edition de PV</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="validergrade.html">
+        <b>Changement grade</b>
+      </a>
+    </li>
+    <li id="dash_dashboard">
+      <a class="waves-effect" href="validersujet.html">
+        <b>Validation Sujet</b>
+      </a>
+    </li>
+  </ul>
+  </ul>
+
+  <header>
+    <ul class="dropdown-content" id="user_dropdown">
+      <li>
+        <a class="indigo-text" href="index.html">Logout</a>
+      </li>
+    </ul>
+
+    <nav class="indigo" role="navigation">
+      <div class="nav-wrapper">
+        <a data-activates="slide-out" class="button-collapse show-on-" href="#!">
+          <img style="margin-top: 10px; margin-left: 10px; height: 60px;" src="../images/logo.png" />
+        </a>
+
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a class='right dropdown-button' href='' data-activates='user_dropdown'>
+              <i class=' material-icons'>account_circle</i>
+            </a>
+          </li>
+        </ul>
+
+        <a href="#" data-activates="slide-out" class="button-collapse">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </div>
+    </nav>
+
+    <nav>
+      <div class="nav-wrapper indigo darken-2">
+        <a style="margin-left: 20px;" class="breadcrumb" href="#!">Admin</a>
+        <a class="breadcrumb" href="#!">valider sujet</a>
+
+        <div style="margin-right: 20px;" id="timestamp" class="right"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="row">
+      <div class="tableview" class="col s12">
+        <table class="centered striped responsive-table">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="result"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="indigo page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text">POST-GRADUATION</h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <span>Made By
+          <a style='font-weight: bold;' href="" target="_blank">Amine Smahi & Oussama Bonnor</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

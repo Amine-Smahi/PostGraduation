@@ -1,0 +1,269 @@
+header, main, footer {
+  padding-left: 240px;
+}
+body {
+  backgroud: white;
+}
+main{
+  padding-top: 2%;
+  padding-left: 15%;
+  padding-right: 2%;
+}
+.login-form{
+  border: 1px solid #BCC2E2;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.accept{
+  background-color: seagreen;
+}
+.refuse{
+  background-color: indianred;
+}
+.imprimer{
+  background-color: darkslateblue;
+}
+.inside-table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 10px;
+  font-weight: normal;
+}
+.mark{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.login-footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+.tableview{
+  padding-left: 0px;
+}
+@media only screen and (max-width: 992px) {
+  header, main, footer {
+      padding-left: 0;
+ }
+}
+.indigo.darken-2 {
+  background-color: #1a9b46 !important;
+}
+.indigo{
+  background-color: #1eb04f !important;
+}
+#credits li, #credits li a {
+  color: white;
+}
+#credits li a {
+  font-weight: bold;
+}
+.footer-copyright .container, .footer-copyright .container a {
+  color: #BCC2E2;
+}
+.fab-tip {
+  position: fixed;
+  right: 85px;
+  padding: 0px 0.5rem;
+  text-align: right;
+  background-color: #323232;
+  border-radius: 2px;
+  color: #FFF;
+  width: auto;
+}
+@media only screen and (max-width: 600px) {
+  .tableview{
+      padding-left: 10px;
+ }
+}
+#printablediv input{
+  align-content: unset;
+  align-items: unset;
+  align-self: unset;
+  animation: unset;
+  appearance: unset;
+  backface-visibility: unset;
+  background-blend-mode: unset;
+  background: unset;
+  binding: unset;
+  block-size: unset;
+  border-block-end: unset;
+  border-block-start: unset;
+  border-collapse: unset;
+  border-inline-end: unset;
+  border-inline-start: unset;
+  border-radius: unset;
+  border-spacing: unset;
+  border: unset;
+  bottom: unset;
+  box-align: unset;
+  box-decoration-break: unset;
+  box-direction: unset;
+  box-flex: unset;
+  box-ordinal-group: unset;
+  box-orient: unset;
+  box-pack: unset;
+  box-shadow: unset;
+  box-sizing: unset;
+  caption-side: unset;
+  clear: unset;
+  clip-path: unset;
+  clip-rule: unset;
+  clip: unset;
+  color-adjust: unset;
+  color-interpolation-filters: unset;
+  color-interpolation: unset;
+  color: unset;
+  column-fill: unset;
+  column-gap: unset;
+  column-rule: unset;
+  columns: unset;
+  content: unset;
+  control-character-visibility: unset;
+  counter-increment: unset;
+  counter-reset: unset;
+  cursor: unset;
+  display: unset;
+  dominant-baseline: unset;
+  empty-cells: unset;
+  fill-opacity: unset;
+  fill-rule: unset;
+  fill: unset;
+  filter: unset;
+  flex-flow: unset;
+  flex: unset;
+  float-edge: unset;
+  float: unset;
+  flood-color: unset;
+  flood-opacity: unset;
+  font-family: unset;
+  font-feature-settings: unset;
+  font-kerning: unset;
+  font-language-override: unset;
+  font-size-adjust: unset;
+  font-size: unset;
+  font-stretch: unset;
+  font-synthesis: unset;
+  font-variant: unset;
+  font-weight: unset;
+  force-broken-image-icon: unset;
+  height: unset;
+  hyphens: unset;
+  image-orientation: unset;
+  image-region: unset;
+  image-rendering: unset;
+  ime-mode: unset;
+  inline-size: unset;
+  isolation: unset;
+  justify-content: unset;
+  justify-items: unset;
+  justify-self: unset;
+  left: unset;
+  letter-spacing: unset;
+  lighting-color: unset;
+  line-height: unset;
+  list-style: unset;
+  margin-block-end: unset;
+  margin-block-start: unset;
+  margin-inline-end: unset;
+  margin-inline-start: unset;
+  margin: unset;
+  marker-offset: unset;
+  marker: unset;
+  mask-type: unset;
+  mask: unset;
+  max-block-size: unset;
+  max-height: unset;
+  max-inline-size: unset;
+  max-width: unset;
+  min-block-size: unset;
+  min-height: unset;
+  min-inline-size: unset;
+  min-width: unset;
+  mix-blend-mode: unset;
+  object-fit: unset;
+  object-position: unset;
+  offset-block-end: unset;
+  offset-block-start: unset;
+  offset-inline-end: unset;
+  offset-inline-start: unset;
+  opacity: unset;
+  order: unset;
+  orient: unset;
+  outline-offset: unset;
+  outline-radius: unset;
+  outline: unset;
+  overflow: unset;
+  padding-block-end: unset;
+  padding-block-start: unset;
+  padding-inline-end: unset;
+  padding-inline-start: unset;
+  padding: unset;
+  page-break-after: unset;
+  page-break-before: unset;
+  page-break-inside: unset;
+  paint-order: unset;
+  perspective-origin: unset;
+  perspective: unset;
+  pointer-events: unset;
+  position: unset;
+  quotes: unset;
+  resize: unset;
+  right: unset;
+  ruby-align: unset;
+  ruby-position: unset;
+  scroll-behavior: unset;
+  scroll-snap-coordinate: unset;
+  scroll-snap-destination: unset;
+  scroll-snap-points-x: unset;
+  scroll-snap-points-y: unset;
+  scroll-snap-type: unset;
+  shape-rendering: unset;
+  stack-sizing: unset;
+  stop-color: unset;
+  stop-opacity: unset;
+  stroke-dasharray: unset;
+  stroke-dashoffset: unset;
+  stroke-linecap: unset;
+  stroke-linejoin: unset;
+  stroke-miterlimit: unset;
+  stroke-opacity: unset;
+  stroke-width: unset;
+  stroke: unset;
+  tab-size: unset;
+  table-layout: unset;
+  text-align-last: unset;
+  text-align: unset;
+  text-anchor: unset;
+  text-combine-upright: unset;
+  text-decoration: unset;
+  text-emphasis-position: unset;
+  text-emphasis: unset;
+  text-indent: unset;
+  text-orientation: unset;
+  text-overflow: unset;
+  text-rendering: unset;
+  text-shadow: unset;
+  text-size-adjust: unset;
+  text-transform: unset;
+  top: unset;
+  transform-origin: unset;
+  transform-style: unset;
+  transform: unset;
+  transition: unset;
+  user-focus: unset;
+  user-input: unset;
+  user-modify: unset;
+  user-select: unset;
+  vector-effect: unset;
+  vertical-align: unset;
+  visibility: unset;
+  white-space: unset;
+  width: unset;
+  will-change: unset;
+  window-dragging: unset;
+  word-break: unset;
+  word-spacing: unset;
+  word-wrap: unset;
+  writing-mode: unset;
+  z-index: unset;
+}

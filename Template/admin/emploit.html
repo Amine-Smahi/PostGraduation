@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paneaux d'administration</title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/font/material-design-icons/Material-Design-Icons.woff'>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+  <body>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
+    <ul id="slide-out" class="side-nav fixed z-depth-2">
+      <li class="center no-padding">
+        <div class="indigo darken-2 white-text" style="height: 180px;">
+          <div class="row">
+            <img style="margin-top: 8%;" width="220" src="../images/logo.png" class="responsive-img" />
+          </div>
+        </div>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="dashboard.html">
+          <b>Dashboard</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="inscriptions.html">
+          <b>Inscriptions</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="reinscription.html">
+          <b>Reinscriptions</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="listeetudiant.html">
+          <b>Liste Doctorant</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="recours.html">
+          <b>Recours</b>
+        </a>
+      </li>
+
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="emploit.html">
+          <b>Emploit du temp</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="editionpv.html">
+          <b>Edition de PV</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="validergrade.html">
+          <b>Changement grade</b>
+        </a>
+      </li>
+      <li id="dash_dashboard">
+        <a class="waves-effect" href="validersujet.html">
+          <b>Validation Sujet</b>
+        </a>
+      </li>
+    </ul>
+    </ul>
+
+    <header>
+      <ul class="dropdown-content" id="user_dropdown">
+        <li>
+          <a class="indigo-text" href="index.html">Logout</a>
+        </li>
+      </ul>
+
+      <nav class="indigo" role="navigation">
+        <div class="nav-wrapper">
+          <a data-activates="slide-out" class="button-collapse show-on-" href="#!">
+              <img style="margin-top: 10px; margin-left: 10px; height: 60px;" src="../images/logo.png"/>
+          </a>
+
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a class='right dropdown-button' href='' data-activates='user_dropdown'>
+                <i class=' material-icons'>account_circle</i>
+              </a>
+            </li>
+          </ul>
+
+          <a href="#" data-activates="slide-out" class="button-collapse">
+            <i class="mdi-navigation-menu"></i>
+          </a>
+        </div>
+      </nav>
+
+      <nav>
+        <div class="nav-wrapper indigo darken-2">
+          <a style="margin-left: 20px;" class="breadcrumb" href="#!">Admin</a>
+          <a class="breadcrumb" href="#!">Emploit du temp</a>
+
+          <div style="margin-right: 20px;" id="timestamp" class="right"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="row">
+          <div class="tableview" class="col s12">
+
+          <div class="row" border="1">
+            <div class="col 3">
+              <p>Selectionner l'anner : </p>
+            </div>
+            <div class="col 3">
+              <select id="mySelect">
+                <option value="1">1ere anner</option>
+                <option value="2">2eme anner</option>
+                <option value="3">3em anner</option>
+                <option value="4">4em anner</option>
+                <option value="5">5em anner</option>
+              </select>
+            </div>
+            <div class="col 3" style="visibility: hidden;width: 1px;">
+              <select id="courses">
+                <option></option>
+              </select>
+            </div>
+            <div class="col 3">
+              <button class="btn" onclick="ArrayFromList()">Generer emploit du temp</button>
+            </div>
+          </div>
+          <br>
+          <div id="printable">
+            <center>
+              <h3 id="title" style="display: none;">Empoit du temp suggerer</h3>
+            </center>
+            <table class="centered striped responsive-table">
+              <thead>
+                <tr>
+                  <th>Horair</th>
+                  <th>Dimanche</th>
+                  <th>Lundi</th>
+                  <th>Mardi</th>
+                  <th>Mercredi</th>
+                  <th>Jeudi</th>
+                </tr>
+              </thead>
+              <tbody id="table">
+
+              </tbody>
+            </table>
+            <br>
+          </div>
+          <br>
+          <button class="btn Imprimer" onclick="hideandshow()">Imprimer</button>
+          <br>
+          <br>
+          <br>
+    </main>
+
+    <footer class="indigo page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h5 class="white-text">POST-GRADUATION</h5>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span>Made By
+            <a style='font-weight: bold;' href="" target="_blank">Amine Smahi & Oussama Bonnor</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+    <script src="js/index.js"></script>
+    <script src="./js/print.min.js"></script>
+  </body>
+
+</html>
