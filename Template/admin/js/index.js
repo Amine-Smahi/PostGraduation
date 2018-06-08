@@ -168,7 +168,7 @@ function AcceptDoctorant(reqid) {
     });
 }
 
-function listRecourtDoctorant() {
+function listRecoursDoctorant() {
     document.getElementById('result').innerHTML = '';
     var request2 = new XMLHttpRequest();
     request2.open('GET', 'http://127.0.0.1:8000/Administration/doctorant/', true);
@@ -189,7 +189,7 @@ function listRecourtDoctorant() {
                                 <td>${coursesList.prenom}</td>
                                 <td>${data.sujet}</td>
                                 <td>${coursesList.email}</td>
-                                <td><button class="waves-effect waves-light btn accept" onclick="AcceptRecourt('${coursesList.recours[i]}')" >accepter</button> <button class="waves-effect waves-light btn refuse" onclick="deleteRecourt('${coursesList.recours[i]}')" >refuser</button></td>
+                                <td><button class="waves-effect waves-light btn accept" onclick="AcceptRecours('${coursesList.recours[i]}')" >accepter</button> <button class="waves-effect waves-light btn refuse" onclick="deleteRecours('${coursesList.recours[i]}')" >refuser</button></td>
                                 </tr>
                                 `;
                             }
@@ -205,25 +205,25 @@ function listRecourtDoctorant() {
     request2.send();
 }
 
-function AcceptRecourt(requrl) {
+function AcceptRecours(requrl) {
     $.ajax({
         url: requrl,
         type: "PATCH",
         crossDomain: true,
         data: "accepted=" + true,
         success: function(data) {
-            listRecourtDoctorant();
+            listRecoursDoctorant();
         }
     });
 }
 
-function deleteRecourt(requrl) {
+function deleteRecours(requrl) {
     $.ajax({
         url: requrl,
         type: "DELETE",
         data: "",
         success: function(data) {
-            listRecourtDoctorant();
+            listRecoursDoctorant();
         }
     });
 }

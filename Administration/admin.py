@@ -14,10 +14,10 @@ class ModuleAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Module, ModuleAdmin)
 
-class RecourtAdmin(admin.ModelAdmin):
+class RecoursAdmin(admin.ModelAdmin):
    pass 
 
-admin.site.register(models.Recourt, ModuleAdmin)
+admin.site.register(models.Recours, ModuleAdmin)
 
 class SujetAdmin(admin.ModelAdmin):
    pass 

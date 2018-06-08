@@ -13,9 +13,9 @@ class ModuleViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ModuleSerializer
     lookup_field = 'niveau'
 
-class RecourtViewSet(viewsets.ModelViewSet):
-    queryset = models.Recourt.objects.all()
-    serializer_class = serializers.RecourtSerializer
+class RecoursViewSet(viewsets.ModelViewSet):
+    queryset = models.Recours.objects.all()
+    serializer_class = serializers.RecoursSerializer
     
 class SujetViewSet(viewsets.ModelViewSet):
     queryset = models.Sujet.objects.all()

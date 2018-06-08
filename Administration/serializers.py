@@ -2,9 +2,9 @@ from rest_framework import serializers
 from . import models
 
 
-class RecourtSerializer(serializers.ModelSerializer):
+class RecoursSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Recourt
+        model = models.Recours
         fields = ('doctorant','sujet','message','accepted')
 
 class PassageGradeSerializer(serializers.ModelSerializer):
@@ -36,7 +36,7 @@ class DoctorantSerializer(serializers.ModelSerializer):
     recours = serializers.HyperlinkedRelatedField(
         many=True,
         read_only=True,
-        view_name='recourt-detail'
+        view_name='recours-detail'
     )
     reinscriptions = serializers.HyperlinkedRelatedField(
         many=True,

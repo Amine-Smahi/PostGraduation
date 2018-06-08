@@ -49,7 +49,7 @@ class Module(models.Model):
     class Meta:
         ordering = ['nom']
 
-class Recourt(models.Model):
+class Recours(models.Model):
     doctorant = models.ForeignKey(Doctorant, related_name='recours', on_delete=models.CASCADE)
     sujet = models.CharField(max_length=50)
     message = models.CharField(max_length=2550)
