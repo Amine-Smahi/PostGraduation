@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-
+from django.shortcuts import render
 from . import models
 from . import serializers
 
@@ -37,4 +37,3 @@ class EnseignantViewSet(viewsets.ModelViewSet):
 class PassageGradeViewSet(viewsets.ModelViewSet):
     queryset = models.PassageGrade.objects.all()
     serializer_class = serializers.PassageGradeSerializer
-    
