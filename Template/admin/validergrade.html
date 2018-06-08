@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="listePassageGrade()">
   <ul id="slide-out" class="side-nav fixed z-depth-2">
     <li class="center no-padding">
       <div class="indigo darken-2 white-text" style="height: 180px;">
@@ -116,123 +116,14 @@
               <th>Nom</th>
               <th>Prenom</th>
               <th>Email</th>
-              <th>Telephone</th>
-              <th>Grade Actuel</th>
-              <th>Objective</th>
+              <th>Grade</th>
+              <th>Objectif</th>
+              <th>Argument</th>
               <th>Action</th>
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <td>Lorem1</td>
-              <td>Ipsum1</td>
-              <td>dolor1@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem2</td>
-              <td>Ipsum2</td>
-              <td>dolor2@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem3</td>
-              <td>Ipsum3</td>
-              <td>dolor3@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem4</td>
-              <td>Ipsum4</td>
-              <td>dolor4@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem5</td>
-              <td>Ipsum5</td>
-              <td>dolor5@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem6</td>
-              <td>Ipsum6</td>
-              <td>dolor6@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem7</td>
-              <td>Ipsum7</td>
-              <td>dolor7@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem8</td>
-              <td>Ipsum8</td>
-              <td>dolor8@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem9</td>
-              <td>Ipsum9</td>
-              <td>dolor9@sit.amet</td>
-              <td>+213000000</td>
-              <td>Maitre assistant A</td>
-              <td>Maitre assistant B</td>
-              <td>
-                <a class="waves-effect waves-light btn accept">accepter</a>
-                <a class="waves-effect waves-light btn refuse">refuser</a>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="result"></tbody>
         </table>
       </div>
     </div>

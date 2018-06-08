@@ -265,7 +265,7 @@ function deleteSujet(reqid) {
     });
 }
 
-function AcceptSujet(reqid, url) {
+function AcceptSujet(reqid) {
     $.ajax({
         url: 'http://127.0.0.1:8000/Administration/sujet/' + reqid + '/',
         type: "PATCH",
@@ -581,5 +581,70 @@ function ajouterPassageGrade(id) {
         window.location.replace("./passagegrade.html");
     }).fail(function(xhr, status, error) {
         alert("Veillez saisire tout les champs correctement");
+    });
+}
+
+function listePassageGrade() {
+    document.getElementById('result').innerHTML = '';
+    var request2 = new XMLHttpRequest();
+    request2.open('GET', 'http://127.0.0.1:8000/Administration/enseignant/', true);
+    request2.onload = function() {
+        var data2 = JSON.parse(this.response);
+        if (request2.status >= 200 && request2.status < 400) {
+            data2.forEach(coursesList => {
+                for (let i = 0; i < coursesList.passagegrades.length; i++) {
+                    var request = new XMLHttpRequest();
+                    request.open('GET', coursesList.passagegrades[i], true);
+                    request.onload = function() {
+                        var data = JSON.parse(this.response);
+                        if (request.status >= 200 && request.status < 400) {
+                            document.getElementById('result').innerHTML += `
+                                <tr>
+                                <td>${coursesList.nom}</td>
+                                <td>${coursesList.prenom}</td>
+                                <td>${coursesList.email}</td>
+                                <td>${coursesList.grade}</td>
+                                <td>${data.gradeVoulu}</td>
+                                <td style="width:40%;" >${data.argument}</td>
+                                <td><button class="waves-effect waves-light btn accept" onclick="AcceptPassageGrade('${coursesList.id}','${data.gradeVoulu}','${data.id}')" >accepter</button> <button class="waves-effect waves-light btn refuse" onclick="deletePassageGrade('${data.id}')">	&nbsp;refuser &nbsp;</button></td>
+                                </tr>
+                                `;
+                        }
+                    }
+                    request.send();
+                }
+            });
+        } else {
+            console.log('error');
+        }
+    }
+    request2.send();
+}
+function deletePassageGrade(reqid) {
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Administration/passagegrade/' + reqid + '/',
+        type: "DELETE",
+        data: "",
+        success: function(data) {
+            listePassageGrade();
+        }
+    });
+}
+
+function AcceptPassageGrade(reqid,gradVoulu,reqid2) {
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Administration/enseignant/' + reqid + '/',
+        type: "PATCH",
+        data: "grade=" + gradVoulu,
+        success: function(data) {
+        }
+    });
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Administration/passagegrade/' + reqid2 + '/',
+        type: "DELETE",
+        data: "",
+        success: function(data) {
+            listePassageGrade();
+        }
     });
 }

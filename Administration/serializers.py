@@ -64,6 +64,12 @@ class SujetSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id','titre','description','accepted')
 
 class EnseignantSerializer(serializers.HyperlinkedModelSerializer):
+    passagegrades = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='passagegrade-detail'    
+    )
     class Meta:
         model = models.Enseignant
-        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','password','grade')
+        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','password','grade','passagegrades')
+    
