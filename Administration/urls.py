@@ -11,6 +11,8 @@ router.register(r'recourt', views.RecourtViewSet)
 router.register(r'sujet', views.SujetViewSet)
 router.register(r'reinscription', views.ReinscriptionViewSet)
 router.register(r'inscription', views.InscriptionViewSet)
+router.register(r'enseignant', views.EnseignantViewSet)
+router.register(r'passagegrade', views.PassageGradeViewSet)
 """
 router.register(r'inscription', views.RecipeViewSet)
 router.register(r'reinscription', views.CourseViewSet)

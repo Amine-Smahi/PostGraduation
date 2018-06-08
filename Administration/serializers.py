@@ -7,6 +7,11 @@ class RecourtSerializer(serializers.ModelSerializer):
         model = models.Recourt
         fields = ('doctorant','sujet','message','accepted')
 
+class PassageGradeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.PassageGrade
+        fields = ('id','enseignant','gradeVoulu','argument')
+
 class ReinscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Reinscription
@@ -15,7 +20,17 @@ class ReinscriptionSerializer(serializers.ModelSerializer):
 class InscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Inscription
-        fields = ('doctorant','intitulerPostGrade','intitulerSujet','diplomeGraduation','nomEncadreur','nomCoEncadreur','dateInscription')
+        fields = ('doctorant','intitulerPostGrade','intitulerSujet','diplomeGraduation','nomEncadreur','nomCoEncadreur','dateInscription','gradeEncadreur','gradeCoEncadreur')
+
+class EnseignantSerializer(serializers.ModelSerializer):
+    passagegrades = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='passagegrade-detail'
+    )
+    class Meta:
+        model = models.Enseignant
+        fields = ('id','nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','grade','passagegrades')
 
 class DoctorantSerializer(serializers.ModelSerializer):
     recours = serializers.HyperlinkedRelatedField(
@@ -47,3 +62,8 @@ class SujetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Sujet
         fields = ('id','titre','description','accepted')
+
+class EnseignantSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Enseignant
+        fields = ('id', 'nom','prenom','sexe' ,'date_naissance', 'lieu_naissance', 'addresse','email','password','grade')

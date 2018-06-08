@@ -7,7 +7,6 @@ from . import serializers
 class DoctorantViewSet(viewsets.ModelViewSet):
     queryset = models.Doctorant.objects.all()
     serializer_class = serializers.DoctorantSerializer
-    lookup_field = 'id'
 
 class ModuleViewSet(viewsets.ModelViewSet):
     queryset = models.Module.objects.all()
@@ -30,3 +29,12 @@ class ReinscriptionViewSet(viewsets.ModelViewSet):
 class InscriptionViewSet(viewsets.ModelViewSet):
     queryset = models.Inscription.objects.all()
     serializer_class = serializers.InscriptionSerializer
+
+class EnseignantViewSet(viewsets.ModelViewSet):
+    queryset = models.Enseignant.objects.all()
+    serializer_class = serializers.EnseignantSerializer
+
+class PassageGradeViewSet(viewsets.ModelViewSet):
+    queryset = models.PassageGrade.objects.all()
+    serializer_class = serializers.PassageGradeSerializer
+    

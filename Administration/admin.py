@@ -33,3 +33,14 @@ class InscriptionAdmin(admin.ModelAdmin):
    pass 
 
 admin.site.register(models.Inscription, ModuleAdmin)
+
+class EnseignantAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.Enseignant, ModuleAdmin)
+
+class PassageGradeAdmin(admin.ModelAdmin):
+   pass 
+
+admin.site.register(models.PassageGrade, ModuleAdmin)
+

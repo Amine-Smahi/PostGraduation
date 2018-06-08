@@ -129,3 +129,40 @@ class Inscription(models.Model):
 
     class Meta:
         ordering = ['intitulerPostGrade']
+
+class Enseignant(models.Model):
+    nom = models.CharField(max_length=50,null=False)
+    prenom = models.CharField(max_length=50,null=False)
+    sexe = models.CharField(max_length=10,null=False)
+    date_naissance = models.DateField()
+    lieu_naissance = models.CharField(max_length=100,null=False)
+    addresse = models.CharField(max_length=100,null=False)
+    email = models.CharField(max_length=50,null=False)
+    telephone = models.CharField(max_length=15,null=False)
+    password = models.CharField(max_length=50,null=False)
+    grade = models.CharField(max_length=50,null=False)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.nom
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.nom)
+
+        super(Enseignant, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['nom']
+
+class PassageGrade(models.Model):
+    enseignant = models.ForeignKey(Enseignant, related_name='passagegrades', on_delete=models.CASCADE)
+    gradeVoulu = models.CharField(max_length=50)
+    argument =  models.TextField()
+
+    class Meta:
+        unique_together = ('enseignant', 'gradeVoulu')
+        ordering = ['gradeVoulu']
+    
+    def __unicode__(self):
+        return '%s: %s' % (self.gradeVoulu, self.argument)
