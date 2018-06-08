@@ -544,3 +544,42 @@ function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+
+function ajouterRecours(id) {
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Administration/recours/',
+        async: true,
+        dataType: 'json',
+        type: 'POST',
+        data: {
+            doctorant: id,
+            sujet: document.getElementById("sujet").value,
+            message: document.getElementById("message").value,
+            accepted: false
+        }
+    }).done(function(data) {
+        $('#popup').fadeIn().css('top', $(document).height() / 2);
+        window.location.replace("./recours.html");
+    }).fail(function(xhr, status, error) {
+        alert("Veillez saisire tout les champs correctement");
+    });
+}
+
+function ajouterPassageGrade(id) {
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Administration/passagegrade/',
+        async: true,
+        dataType: 'json',
+        type: 'POST',
+        data: {
+            enseignant: id,
+            gradeVoulu: document.getElementById("gradeVoulu").value,
+            argument: document.getElementById("argument").value
+        }
+    }).done(function(data) {
+        $('#popup').fadeIn().css('top', $(document).height() / 2);
+        window.location.replace("./passagegrade.html");
+    }).fail(function(xhr, status, error) {
+        alert("Veillez saisire tout les champs correctement");
+    });
+}

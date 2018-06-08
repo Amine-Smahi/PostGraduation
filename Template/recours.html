@@ -103,16 +103,14 @@
 				<div class="contact-grids">
 					<div class=" col-md-12 contact-form">
 						<h4 class="heading">Demande recours</h4>
-						<form action="#" method="post">
 							<label>Sujet : </label>
-							<input type="text" placeholder="" required="" />
+							<input id="sujet" type="text" placeholder="" required="" />
 							<label>Detaile</label>
-							<textarea placeholder="Message" required=""></textarea>
+							<textarea id="message" placeholder="Message" required=""></textarea>
 							<div class="submit1" align="center">
 								<br>
-								<input type="submit" value="Envoyer">
+								<button onclick="ajouterRecours(9)" class="btn btn1">Envoyer</button>
 							</div>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -167,6 +165,7 @@
 			<span id="toTopHover" style="opacity: 1;"> </span>
 		</a>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script src="./admin/js/index.js"></script>
 	</body>
 
 </html>
