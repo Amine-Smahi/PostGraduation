@@ -1,5 +1,4 @@
 from rest_framework import viewsets
-from django.shortcuts import render
 from . import models
 from . import serializers
 
