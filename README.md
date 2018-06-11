@@ -13,8 +13,9 @@ University management platform dedicated for post-graduation in computer science
 
 
 ### Mobile version
-![mob](https://user-images.githubusercontent.com/24621701/41236222-79f7be22-6d88-11e8-9175-f31d51c68f81.png)
-![mob2](https://user-images.githubusercontent.com/24621701/41236223-7a53c186-6d88-11e8-9688-5fcc75ea412e.png)
-![mob4](https://user-images.githubusercontent.com/24621701/41236224-7a936430-6d88-11e8-952d-2f77a8a7dd15.png)
+![mob](https://user-images.githubusercontent.com/24621701/41236538-4ac1ccbe-6d89-11e8-8392-0e8332d7668d.png)
+![mob2](https://user-images.githubusercontent.com/24621701/41236541-4b9ced12-6d89-11e8-9b1f-ad450384ddf7.png)
+![mob4](https://user-images.githubusercontent.com/24621701/41236543-4bff0240-6d89-11e8-98c9-9f209d3daddd.png)
+
 
 #### PS : to see more screenshots, take a look at the screenshots folder (comming soon ...)
