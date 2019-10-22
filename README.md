@@ -3,19 +3,15 @@ University management platform dedicated for post-graduation in computer science
 ## Tools and Languages:
 * Visuel Studio Code (code writting and debugging).
 * Django REST Framework (API based access and data transfer).
-* Materelise.
+* HTML, CSS and JS
+* Materelize.
 * Python (programming language).
 
 ## Screenshots: 
-### Desktop version
-![download](https://user-images.githubusercontent.com/24621701/41236113-2e8341be-6d88-11e8-96d9-b9f4196c499f.png)
-![deepinscreenshot_20180604101726](https://user-images.githubusercontent.com/24621701/41236127-39c3058c-6d88-11e8-8613-d99957ca19ae.png)
-
-
-### Mobile version
-![mob](https://user-images.githubusercontent.com/24621701/41236538-4ac1ccbe-6d89-11e8-8392-0e8332d7668d.png)
-![mob2](https://user-images.githubusercontent.com/24621701/41236541-4b9ced12-6d89-11e8-9b1f-ad450384ddf7.png)
-![mob4](https://user-images.githubusercontent.com/24621701/41236543-4bff0240-6d89-11e8-98c9-9f209d3daddd.png)
-
-
-#### PS : to see more screenshots, take a look at the screenshots folder (comming soon ...)
+![image](https://user-images.githubusercontent.com/24621701/67271733-0e6f2880-f4b3-11e9-81cd-a9e43ccb46b4.png)
+![image](https://user-images.githubusercontent.com/24621701/67271741-1333dc80-f4b3-11e9-8175-2f60bdc35e2c.png)
+![image](https://user-images.githubusercontent.com/24621701/67271751-1929bd80-f4b3-11e9-8c3a-7f760ebfab12.png)
+![image](https://user-images.githubusercontent.com/24621701/67271777-25ae1600-f4b3-11e9-9e60-c16c4cc41638.png)
+![image](https://user-images.githubusercontent.com/24621701/67271790-2b0b6080-f4b3-11e9-82c7-bed1a4f4ccf9.png)
+![image](https://user-images.githubusercontent.com/24621701/67271806-33639b80-f4b3-11e9-9cff-c622bec83ff2.png)
+![image](https://user-images.githubusercontent.com/24621701/67271824-3eb6c700-f4b3-11e9-86a8-c3543a666b3e.png)
